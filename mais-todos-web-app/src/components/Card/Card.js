@@ -4,7 +4,7 @@ import { CardWrapper, Price, Text, ImageWrapper, ProductImg } from "./styles";
 const card = ({ img, description, price, id }) => (
   <CardWrapper to={`/product/${id}`}>
     <ImageWrapper>
-      <ProductImg alt="product card" src={img} />
+      <ProductImg alt="card" src={img} />
     </ImageWrapper>
     <div>
       <Text>{description}</Text>
