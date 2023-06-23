@@ -5,14 +5,19 @@ import {
   ActionWrapper,
   NavWrapper,
   NavLink,
+  Cart,
+  Person,
+  ImgLogo
 } from "./styles";
 
 const navbar = () => (
   <NavBarHeader>
-    <LogoWrapper>Logo</LogoWrapper>
+    <LogoWrapper>
+      <ImgLogo alt="brand logo" src="/logoTacca.png" />
+    </LogoWrapper>
     <ActionWrapper>
-      <div>Profile</div>
-      <div>Cart</div>
+      <Person size="24px" />
+      <Cart size="24px" />
     </ActionWrapper>
     <NavWrapper>
       <NavLink to="/">nav item</NavLink>

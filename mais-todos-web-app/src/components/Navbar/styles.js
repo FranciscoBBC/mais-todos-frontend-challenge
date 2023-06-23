@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { BsPerson, BsCart2 } from "react-icons/bs";
 
 export const NavBarHeader = styled.header`
   display: grid;
@@ -21,7 +22,6 @@ export const ActionWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: var(--spacing-1);
 `;
 
 export const NavWrapper = styled.nav`
@@ -29,9 +29,26 @@ export const NavWrapper = styled.nav`
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  grid-column-start: 1;
+  grid-column-end: 3;
+`;
+
+export const ImgLogo = styled.img`
+  width: 150px;
+  margin-left: var(--spacing-2);
 `;
 
 export const NavLink = styled(Link)`
   color: var(--black);
   text-decoration: none;
+  margin: 0 var(--spacing-2);
+  font-weight: 600;
+`;
+
+export const Person = styled(BsPerson)`
+  margin-right: var(--spacing-2);
+`;
+
+export const Cart = styled(BsCart2)`
+  margin-right: var(--spacing-2);
 `;
