@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  mais-todos-wep-app:
+    container_name: mais-todos-web-app-dev
+    restart: always
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      target: client_development
+    volumes:
+      - ./mais-todos-web-app:/app
+    ports:
+      - ${CLIENT_PORT}:${CLIENT_PORT}

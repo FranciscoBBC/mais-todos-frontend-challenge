@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  mais-todos-wep-app: 
+    image: mais-todos-client:latest
+    env_file:
+      - .env
+    networks:
+      - mais-todos
+
+networks:
+  mais-todos:
+    driver: bridge
