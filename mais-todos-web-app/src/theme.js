@@ -24,9 +24,11 @@ export const GlobalStyle = createGlobalStyle`
     --spacing-8: 64px;
 
     /* colors */
-    --light-gray: #F7F8FA;
-    --white: #FFF;
-    --selected-lik: rgb(237, 53, 75);
-    --black: #000;
+    --color-light-gray: #F7F8FA;
+    --color-medium-gray: #e0e0e0;
+    --color-white: #FFF;
+    /* --color-selected-lik: rgb(237, 53, 75); */
+    --color-emerald: #03c998;
+    --color-black: #000;
 }
 `;
