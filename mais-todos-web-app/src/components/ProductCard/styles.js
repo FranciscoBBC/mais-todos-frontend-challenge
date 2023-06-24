@@ -23,19 +23,6 @@ export const Text = styled.h3`
   line-height: 1.5;
 `;
 
-export const Price = styled.div`
-  font-size: 12px;
-  font-weight: 400;
-  text-align: left;
-  text-decoration: none;
-  color: var(--color-black);
-  span {
-    color: var(--color-emerald);
-    font-weight: 700;
-    font-size: 18px;
-  }
-`;
-
 export const ImageWrapper = styled.div`
   width: 100%;
   height: 250px;
