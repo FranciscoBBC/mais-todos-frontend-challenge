@@ -45,6 +45,11 @@ export const NavLink = styled(Link)`
   font-weight: 600;
 `;
 
+export const IconLink = styled(Link)`
+  color: var(--black);
+  text-decoration: none;
+`;
+
 export const Person = styled(BsPerson)`
   margin-right: var(--spacing-2);
 `;

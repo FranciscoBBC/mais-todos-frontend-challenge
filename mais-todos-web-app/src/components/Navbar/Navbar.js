@@ -8,6 +8,7 @@ import {
   Cart,
   Person,
   ImgLogo,
+  IconLink,
 } from "./styles";
 
 const Navbar = () => (
@@ -16,8 +17,12 @@ const Navbar = () => (
       <ImgLogo alt="brand logo" src="/logoTacca.png" />
     </LogoWrapper>
     <ActionWrapper>
-      <Person size="24px" />
-      <Cart size="24px" />
+      <IconLink to="/">
+        <Person size="24px" />
+      </IconLink>
+      <IconLink to="/cart">
+        <Cart size="24px" />
+      </IconLink>
     </ActionWrapper>
     <NavWrapper>
       <NavLink to="/">nav item</NavLink>
