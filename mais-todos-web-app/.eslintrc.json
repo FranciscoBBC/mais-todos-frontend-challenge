@@ -28,6 +28,8 @@
         "react/jsx-one-expression-per-line": "off",
         "comma-dangle": "off",
         "no-restricted-exports": "off",
-        "object-curly-newline": ["error", { "multiline": true }]
+        "object-curly-newline": "off",
+        "function-paren-newline": "off",
+        "implicit-arrow-linebreak": "off"
     }
 }

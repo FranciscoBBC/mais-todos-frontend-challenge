@@ -2,9 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "react-query";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import Home from "./pages/home/Home";
+import Home from "./pages/Home";
+import Product from "./pages/Product";
 
 // creating routes
 const router = createBrowserRouter([
@@ -16,14 +18,22 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
+      {
+        path: "/product/:id",
+        element: <Product />,
+      },
     ],
   },
 ]);
 
+const queryClient = new QueryClient();
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   </React.StrictMode>
 );
 
