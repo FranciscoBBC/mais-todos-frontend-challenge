@@ -8,7 +8,7 @@ const Price = ({ money, priceSize }) => {
   }).format(money);
 
   return (
-    <Text priceSize={priceSize}>
+    <Text pricesize={priceSize}>
       por <span>{formatedPrice}</span> à vista
     </Text>
   );

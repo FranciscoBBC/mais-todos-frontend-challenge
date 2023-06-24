@@ -9,6 +9,6 @@ export const Text = styled.div`
   span {
     color: var(--color-emerald);
     font-weight: 700;
-    font-size: ${({ priceSize }) => priceSize || "18px"};
+    font-size: ${({ pricesize }) => pricesize || "18px"};
   }
 `;
