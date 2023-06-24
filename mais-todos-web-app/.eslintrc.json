@@ -30,6 +30,7 @@
         "no-restricted-exports": "off",
         "object-curly-newline": "off",
         "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off"
+        "implicit-arrow-linebreak": "off",
+        "react/function-component-definition": "off"
     }
 }
