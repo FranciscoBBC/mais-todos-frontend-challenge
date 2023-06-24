@@ -1,15 +1,13 @@
 import React from "react";
 import { Text } from "./styles";
+import priceFormatter from "../../utils/priceFormater";
 
 const Price = ({ money, priceSize }) => {
-  const formatedPrice = Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-  }).format(money);
+  const formattedPrice = priceFormatter(money);
 
   return (
     <Text pricesize={priceSize}>
-      por <span>{formatedPrice}</span> à vista
+      por <span>{formattedPrice}</span> à vista
     </Text>
   );
 };
