@@ -7,10 +7,10 @@ import {
   NavLink,
   Cart,
   Person,
-  ImgLogo
+  ImgLogo,
 } from "./styles";
 
-const navbar = () => (
+const Navbar = () => (
   <NavBarHeader>
     <LogoWrapper>
       <ImgLogo alt="brand logo" src="/logoTacca.png" />
@@ -25,4 +25,4 @@ const navbar = () => (
   </NavBarHeader>
 );
 
-export default navbar;
+export default Navbar;
