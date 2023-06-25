@@ -46,7 +46,9 @@ const Cart = () => {
             </ResumeWrapper>
           </CartItem>
         ))}
-        <Button onClick={() => navigate("/checkout")}>COMPRAR</Button>
+        {cartStorage.length > 0 && (
+          <Button onClick={() => navigate("/checkout")}>COMPRAR</Button>
+        )}
       </div>
     </PageWrapper>
   );
