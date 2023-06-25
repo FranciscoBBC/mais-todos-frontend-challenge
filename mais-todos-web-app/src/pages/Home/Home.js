@@ -1,12 +1,26 @@
 import React from "react";
-import Card from "../../components/Card";
+import ProductList from "../../components/ProductList";
+import { useFetchAllProducts } from "../../queries/productQueries";
+import { PageWrapper } from "./styles";
 
-const home = () => (
-  <div>
-    <Card />
-    <Card />
-    <Card />
-  </div>
-);
+function Home() {
+  const { data, isLoading, error } = useFetchAllProducts();
 
-export default home;
+  if (isLoading) {
+    return <div>loading</div>;
+  }
+  if (error) {
+    return <div>error</div>;
+  }
+
+  return (
+    <PageWrapper>
+      <h1>Melhores Produtos</h1>
+      <div>
+        <ProductList productList={data} />
+      </div>
+    </PageWrapper>
+  );
+}
+
+export default Home;
