@@ -1,6 +1,15 @@
 import { BsTrash } from "react-icons/bs";
 import styled from "styled-components";
 
+export const PageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-2);
+  gap: var(--spacing-1);
+`;
+
 export const PageTitle = styled.h1`
   font-size: 18px;
 `;
@@ -52,4 +61,5 @@ export const PriceWrapper = styled.div`
 
 export const ExcludIcon = styled(BsTrash)`
   height: 100%;
+  cursor: pointer;
 `;

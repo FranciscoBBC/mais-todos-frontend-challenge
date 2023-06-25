@@ -11,6 +11,7 @@ import {
   PriceWrapper,
   CartItem,
   ExcludIcon,
+  PageWrapper,
 } from "./styles";
 import priceFormatter from "../../utils/priceFormater";
 import Button from "../../components/Button";
@@ -23,7 +24,7 @@ const Cart = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <PageWrapper>
       <PageTitle>Resumo da sacola</PageTitle>
       <div>
         <ItemsCounter>
@@ -47,7 +48,7 @@ const Cart = () => {
         ))}
         <Button onClick={() => navigate("/checkout")}>COMPRAR</Button>
       </div>
-    </div>
+    </PageWrapper>
   );
 };
 
