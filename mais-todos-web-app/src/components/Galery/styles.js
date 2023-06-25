@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const GalerryWrapper = styled.div`
   width: 100%;
-  height: 250px;
+  height: auto;
 `;
 
 export const ProductImg = styled.img`

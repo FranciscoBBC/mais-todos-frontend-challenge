@@ -1,7 +1,14 @@
 import React, { useCallback } from "react";
 import { useParams } from "react-router-dom";
 import Gallery from "../../components/Galery";
-import { Title } from "./styles";
+import {
+  Title,
+  PageWrapper,
+  Description,
+  CartButton,
+  GalleryWrapper,
+  DescriptionWrapper,
+} from "./styles";
 import Price from "../../components/Price";
 import Button from "../../components/Button";
 import { useFetchSingleProduct } from "../../queries/productQueries";
@@ -27,18 +34,24 @@ const Product = () => {
     return <div>error</div>;
   }
 
-  const { image, title, price, rating } = data;
+  const { image, title, price, description } = data;
 
   return (
-    <div>
-      <Gallery images={[image]} />
-      <Title>{title}</Title>
-      <div>{rating.rate}</div>
-      <Price money={price} priceSize="24px" />
-      <Button onClick={() => handleSendToCart(data)}>
-        ADICIONAR AO CARRINHO
-      </Button>
-    </div>
+    <PageWrapper>
+      <GalleryWrapper>
+        <Gallery images={[image]} />
+      </GalleryWrapper>
+      <DescriptionWrapper>
+        <Title>{title}</Title>
+        <Description>{description}</Description>
+        <Price money={price} priceSize="24px" />
+        <CartButton>
+          <Button onClick={() => handleSendToCart(data)}>
+            ADICIONAR AO CARRINHO
+          </Button>
+        </CartButton>
+      </DescriptionWrapper>
+    </PageWrapper>
   );
 };
 
