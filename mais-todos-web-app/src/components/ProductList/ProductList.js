@@ -4,7 +4,7 @@ import { ListWrapper } from "./styles";
 
 const ProductList = ({ productList }) => (
   <ListWrapper>
-    {productList.map(({ id, title, price, image }) => (
+    {productList?.map(({ id, title, price, image }) => (
       <Card key={id} id={id} title={title} price={price} img={image} />
     ))}
   </ListWrapper>
