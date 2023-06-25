@@ -15,6 +15,8 @@ export const Form = styled.form`
   justify-content: center;
   align-items: center;
   gap: var(--spacing-2);
+  max-width: 768px;
+  width: 100%;
 `;
 
 export const Select = styled.select`
