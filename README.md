@@ -37,8 +37,12 @@ Tentei seguir a risca as bibliotecas requeridas no teste.
 
 ## Melhorias pendentes
 
+A maioria das pendencias foi por falta de tempo, a seguir o que eu gostaria de ter feito para complementar o teste.
+
 - Fazer login e passar o id do usuário correto para ser salvo no banco de dados.
 - Implementar a integração com a Stripe, infelizmente não tive tempo para terminar.
 - Melhorias na usabilidade, criar componente de loading e uma página de erro para servir de fallback para o react-router.
 - Ter os produtos salvos no mongo para aumentar a velocidade de entrega nas requisições.
 - Implementar camada de redis para fazer o cache do retorno da API
+- Listar as compras do usuário
+- Fazer os testes na API
