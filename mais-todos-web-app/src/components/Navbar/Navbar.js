@@ -32,7 +32,9 @@ const Navbar = () => {
         </IconLink>
         <IconLink to="/cart">
           <Cart size="24px" />
-          {cartStorage.length > 0 && <span>{cartAlert}</span>}
+          {cartStorage.length > 0 && (
+            <span data-testid="cartAlert">{cartAlert}</span>
+          )}
         </IconLink>
       </ActionWrapper>
       <NavWrapper>
