@@ -6,7 +6,6 @@ import { useFetchProductsByCategory } from "../../queries/productQueries";
 
 const Category = () => {
   const { name } = useParams();
-  console.log(name);
 
   const { data, isLoading, error } = useFetchProductsByCategory(name);
 
@@ -16,7 +15,6 @@ const Category = () => {
   if (error) {
     return <div>error</div>;
   }
-  console.log(data);
 
   return (
     <PageWrapper>
