@@ -40,7 +40,7 @@ export const CartButton = styled.div`
   width: 100%;
 `;
 
-export const GalleryWrapper = styled.div`
+export const GaleryWrapper = styled.div`
   display: flex;
   height: 400px;
   width: 100%;

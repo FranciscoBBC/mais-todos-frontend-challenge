@@ -3,7 +3,7 @@ import { GalerryWrapper, ProductImg } from "./styles";
 import Modal from "./Modal";
 import SlideShow from "./SlideShow/SlideShow";
 
-const Gallery = ({ images }) => {
+const Galery = ({ images }) => {
   const [openModal, setOpenModal] = useState(false);
 
   return (
@@ -18,4 +18,4 @@ const Gallery = ({ images }) => {
   );
 };
 
-export default Gallery;
+export default Galery;

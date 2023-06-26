@@ -1,12 +1,12 @@
 import React, { useCallback } from "react";
 import { useParams } from "react-router-dom";
-import Gallery from "../../components/Galery";
+import Galery from "../../components/Galery";
 import {
   Title,
   PageWrapper,
   Description,
   CartButton,
-  GalleryWrapper,
+  GaleryWrapper,
   DescriptionWrapper,
 } from "./styles";
 import Price from "../../components/Price";
@@ -38,9 +38,9 @@ const Product = () => {
 
   return (
     <PageWrapper>
-      <GalleryWrapper>
-        <Gallery images={[image]} />
-      </GalleryWrapper>
+      <GaleryWrapper>
+        <Galery images={[image]} />
+      </GaleryWrapper>
       <DescriptionWrapper>
         <Title>{title}</Title>
         <Description>{description}</Description>
