@@ -1,4 +1,4 @@
-import { useQuery } from "react-query";
+import { useMutation, useQuery } from "react-query";
 import api from "../services/api";
 
 async function getProducts(ctx) {
@@ -26,4 +26,24 @@ export function useFetchAllProducts() {
 
 export function useFetchProductsByCategory(category) {
   return useQuery(["productsByCategory", null, category], getProducts);
+}
+
+async function editProducts(productData) {
+  const { id, data: infos } = productData;
+  const { data } = await api.put(`/products/${id}`, { infos });
+  return data;
+}
+
+export function useEditProduct() {
+  return useMutation(editProducts);
+}
+
+async function deleteProduct(productData) {
+  const { id } = productData;
+  const { data } = await api.delete(`/products/${id}`);
+  return data;
+}
+
+export function useDeleteProduct() {
+  return useMutation(deleteProduct);
 }

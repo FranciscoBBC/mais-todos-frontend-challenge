@@ -38,6 +38,9 @@ export const DescriptionWrapper = styled.div`
 
 export const CartButton = styled.div`
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
 `;
 
 export const GaleryWrapper = styled.div`
