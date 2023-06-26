@@ -20,3 +20,14 @@ COPY --from=builder /app/build /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
+
+FROM base AS server_development
+ENV NODE_ENV development
+EXPOSE 7000
+CMD ["yarn", "server_dev"]
+
+FROM base as production
+ENV NODE_ENV=production
+EXPOSE 7000
+ENTRYPOINT [ "yarn", "build_server" ]
+CMD [ "yarn", "server_prod" ]

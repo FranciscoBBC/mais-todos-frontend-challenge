@@ -5,6 +5,32 @@ services:
     image: mais-todos-client:latest
     env_file:
       - .env
+    depends_on:
+      - mais-todos-api
+    networks:
+      - mais-todos
+
+  mais-todos-api:
+    image: mais-todos-api:latest
+    env_file:
+      - .env
+    depends_on:
+      - db
+    networks:
+      - mais-todos
+
+  db:
+    image: mongo:6.0.6-jammy
+    env_file:
+      - .env
+    container_name: mais-todos-api-db
+    restart: always
+    ports:
+      - ${DB_PORT}:27017
+    environment:
+      MONGO_INITDB_DATABASE: ${DB_NAME}
+      MONGO_INITDB_ROOT_USERNAME: ${DB_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${DB_PASS}
     networks:
       - mais-todos
 

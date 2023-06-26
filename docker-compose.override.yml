@@ -12,3 +12,15 @@ services:
       - ./mais-todos-web-app:/app
     ports:
       - ${CLIENT_PORT}:${CLIENT_PORT}
+
+  mais-todos-api:
+    container_name: mais-todos-api-dev
+    restart: always
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      target: server_development
+    volumes:
+      - ./mais-todos-api:/app
+    ports:
+      - ${SERVER_PORT}:${SERVER_PORT}

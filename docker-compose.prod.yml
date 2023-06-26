@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  mais-todos-api:
+    container_name: mais-todos-api-prod
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      target: server_production
+    ports:
+      - ${SERVER_PORT}:${SERVER_PORT}
+
