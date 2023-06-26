@@ -10,6 +10,7 @@ import Product from "./pages/Product";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Category from "./pages/Category";
+import EditProduct from "./pages/EditProduct/EditProduct";
 
 // creating routes
 const router = createBrowserRouter([
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "/checkout",
         element: <Checkout />,
+      },
+      {
+        path: "/edit",
+        element: <EditProduct />,
       },
     ],
   },
