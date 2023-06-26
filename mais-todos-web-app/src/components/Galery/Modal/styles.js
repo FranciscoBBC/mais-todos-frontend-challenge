@@ -9,7 +9,8 @@ export const ModalContent = styled.div`
   left: 0;
   align-items: center;
   justify-content: center;
-  display: ${({ open }) => (open ? "flex" : "none")};
+  display: flex;
+  z-index: 999;
 `;
 
 export const CloseWrapper = styled.div`
