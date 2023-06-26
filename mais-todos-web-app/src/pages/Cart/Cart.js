@@ -40,6 +40,7 @@ const Cart = () => {
               <Title>{item.title}</Title>
               <PriceWrapper>{priceFormatter(item.price)}</PriceWrapper>
               <ExcludIcon
+                data-testid="removeItem"
                 size={24}
                 onClick={() => removeProductFromCart(item.id)}
               />
