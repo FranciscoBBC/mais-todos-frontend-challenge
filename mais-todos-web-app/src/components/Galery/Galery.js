@@ -9,7 +9,7 @@ const Galery = ({ images }) => {
   return (
     <>
       <GalerryWrapper onClick={() => setOpenModal(true)}>
-        <ProductImg alt="main gallery" src={images[0]} />
+        <ProductImg alt="main gallery" src={images[0]} loading="lazy" />
       </GalerryWrapper>
       <Modal open={openModal} onClose={() => setOpenModal(false)}>
         <SlideShow images={images} />
