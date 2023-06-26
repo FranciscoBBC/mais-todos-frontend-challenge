@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useCallback, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
 import {
   Form,
@@ -14,6 +15,7 @@ import {
 } from "./styles";
 import useCartStore from "../../store/useCartStore";
 import priceFormatter from "../../utils/priceFormater";
+import { useBuyProduct } from "../../queries/productQueries";
 
 const formSchema = z.object({
   paymentInfos: z.object({
@@ -37,6 +39,9 @@ const formSchema = z.object({
 
 const Checkout = () => {
   const cartStorage = useCartStore((state) => state.cart);
+  const clearCart = useCartStore((state) => state.clearCart);
+  const { mutate, isSuccess, isError, isLoading } = useBuyProduct();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -56,9 +61,12 @@ const Checkout = () => {
     },
   });
 
-  const handleSubmitForm = (data) => {
-    console.log(data);
-  };
+  const handleSubmitForm = useCallback(
+    (data) => {
+      mutate({ ...data, cart: cartStorage });
+    },
+    [cartStorage, mutate]
+  );
 
   const totalPrice = (cart) => {
     let total = 0;
@@ -67,6 +75,13 @@ const Checkout = () => {
     });
     return priceFormatter(total);
   };
+
+  useEffect(() => {
+    if (isSuccess) {
+      clearCart();
+      navigate("/");
+    }
+  }, [clearCart, isSuccess, navigate]);
 
   return (
     <PageWrapper>
@@ -140,6 +155,9 @@ const Checkout = () => {
 
         <Button type="submit">COMPRAR</Button>
       </Form>
+      {isLoading && <span>loading</span>}
+      {isError && <span>Algo deu errado</span>}
+      {isSuccess && <span>Produto editado com sucesso</span>}
     </PageWrapper>
   );
 };

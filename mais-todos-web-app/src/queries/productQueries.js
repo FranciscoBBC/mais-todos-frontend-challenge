@@ -47,3 +47,15 @@ async function deleteProduct(productData) {
 export function useDeleteProduct() {
   return useMutation(deleteProduct);
 }
+
+async function buyProduct(purchaseData) {
+  console.log(purchaseData);
+  const { paymentInfos, cart } = purchaseData;
+
+  const { data } = await api.post("/products/buy", { paymentInfos, cart });
+  return data;
+}
+
+export function useBuyProduct() {
+  return useMutation(buyProduct);
+}

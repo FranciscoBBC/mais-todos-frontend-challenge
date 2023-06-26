@@ -15,6 +15,11 @@ const useCartStore = create(
           cart: state.cart.filter((product) => product.id !== productID),
         }));
       },
+      clearCart: () => {
+        set(() => ({
+          cart: [],
+        }));
+      },
     }),
     {
       name: "cart-storage",
